@@ -24,9 +24,10 @@
             <TextBlock TextWrapping="Wrap">
                 <StackPanel>
                     <materialDesign:Chip
-                      Content="Twitter"
+                        Margin="0 10 0 10"
+                      Content="https://github.com/Campanulata/WPFAll"
                       IconBackground="{DynamicResource PrimaryHueDarkBrush}"
-                      IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}" Click="Chip_Click">
+                      IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}" Click="Chip_Click" Cursor="Hand">
                       <materialDesign:Chip.Icon>
                         <materialDesign:PackIcon
                           Kind="Github"></materialDesign:PackIcon>
@@ -37,7 +38,7 @@
                         榜单制作：指定图片加文字，生成文件与源文件在同一目录下
                     </TextBlock>
                     <TextBlock Margin="0 10 0 10">
-                        数据分析：根据学生上课作业数据生成差异化反馈
+                        数据分析：分析数据
                     </TextBlock>
                 </StackPanel>
 

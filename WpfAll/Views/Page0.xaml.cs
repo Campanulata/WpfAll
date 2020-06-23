@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,7 +26,7 @@ namespace MaterialDesignThemeDemo.Views
 
         private void Chip_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.zhaokeli.com");
+            System.Diagnostics.Process.Start("explorer.exe", "https://github.com/Campanulata/WPFAll");
         }
     }
 }
