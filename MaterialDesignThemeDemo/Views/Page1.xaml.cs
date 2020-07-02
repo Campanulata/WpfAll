@@ -33,9 +33,5 @@ namespace MaterialDesignThemeDemo.Views
             string path = f.FileName;
             TextImgPath.Text = @path;
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-        }
     }
 }

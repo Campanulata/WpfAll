@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemeDemo.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,8 @@ namespace MaterialDesignThemeDemo.Views
         public Page2()
         {
             InitializeComponent();
+            DataContext = new Page2ViewModel();
+
         }
     }
 }

@@ -16,7 +16,7 @@ namespace MaterialDesignThemeDemo.ViewModels
         {
             MenuModels = new ObservableCollection<MenuModel>();
             MenuModels.Add(new MenuModel() { Icon = "ScriptText", Title="榜单制作" });
-            MenuModels.Add(new MenuModel() { Icon = "MicrosoftExcel", Title="数据分析" });
+            MenuModels.Add(new MenuModel() { Icon = "MicrosoftExcel", Title= "作业得分排行榜" });
             Page = new Page0();
             OpenCommand = new RelayCommand<string>(t => OpenPage(t));
         }
@@ -40,7 +40,7 @@ namespace MaterialDesignThemeDemo.ViewModels
                 case "榜单制作":
                     Page = new Page1();
                     break;
-                case "数据分析":
+                case "作业得分排行榜":
                     Page = new Page2();
 
                     break;

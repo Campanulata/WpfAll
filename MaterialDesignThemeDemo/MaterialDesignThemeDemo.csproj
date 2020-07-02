@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>C:\Users\ts198\Desktop\</OutputPath>
+    <OutputPath>\\Mac\Home\Desktop\</OutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Page2ViewModel.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="3.1.3" />

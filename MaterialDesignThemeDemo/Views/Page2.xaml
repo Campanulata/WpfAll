@@ -5,9 +5,73 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MaterialDesignThemeDemo.Views"
              mc:Ignorable="d" 
+                         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+            TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+            Background="{DynamicResource MaterialDesignPaper}"
+            TextElement.FontWeight="Medium"
+            TextElement.FontSize="14"
+            FontFamily="{materialDesign:MaterialDesignFont}"
+
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="page2"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
+        <StackPanel>
+            <ComboBox
+                Width="180"
+                Margin="0 10 0 0"
+                  materialDesign:HintAssist.Hint="选择字体"
+                  ItemsSource="{Binding FontNames}"
+                Text="{Binding FontName}"
+                  Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <TextBlock Margin="10,10,10,0" Text="姓名" Width="100" HorizontalAlignment="Left" />
+                    <TextBox 
+                Text="{Binding Names}"
+                Width="100"
+                
+                AcceptsReturn="True"
+                HorizontalAlignment="Left"
+                BorderThickness="1"
+                Margin="10 10 10 10" Height="300"/>
+                    <TextBlock Width="100" />
+
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Margin="10,10,10,0" Text="分数" Width="100" HorizontalAlignment="Left" />
+                    <TextBox 
+                Text="{Binding Scores}"
+                Width="100"
+                
+                AcceptsReturn="True"
+                HorizontalAlignment="Left"
+                BorderThickness="1"
+                Margin="10 10 10 10" Height="300"/>
+                    <TextBlock Width="100" />
+                    <Button
+                Command="{Binding RelativeSource={RelativeSource AncestorType=local:Page2},Path=DataContext.SaveCommand}"
+                HorizontalAlignment="Left"
+                Margin="10 0 0 0"
+                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                Width="100"
+                ToolTip="Resource name: MaterialDesignRaisedLightButton" >
+                        _生成图片
+                    </Button>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

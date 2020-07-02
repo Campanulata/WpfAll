@@ -131,7 +131,7 @@
                 Margin="10 0 0 0"
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
                 Width="100"
-                ToolTip="Resource name: MaterialDesignRaisedLightButton" Click="Button_Click_1">
+                ToolTip="Resource name: MaterialDesignRaisedLightButton" >
                 _生成图片
             </Button>
         </StackPanel>
