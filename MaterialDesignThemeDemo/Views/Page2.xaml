@@ -33,6 +33,18 @@
                     </ItemsPanelTemplate>
                 </ComboBox.ItemsPanel>
             </ComboBox>
+            <TextBox 
+            materialDesign:HintAssist.Hint="当前课次"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            Margin="10 10 10 0"
+            Height="40"
+            Width="200"
+            >
+                <TextBox.Text>
+                    <Binding Path="Times"/>
+                </TextBox.Text>
+            </TextBox>
+
         </StackPanel>
         <StackPanel Grid.Column="1">
             <StackPanel Orientation="Horizontal">

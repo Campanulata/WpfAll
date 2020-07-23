@@ -13,7 +13,7 @@ namespace MaterialDesignThemeDemo.ViewModels
         {
             FontNames = new List<string> { "微软雅黑", "华文楷体" };
             SaveCommand = new RelayCommand<string>(t => Save());
-
+            Times = "1";
         }
         public List<string> FontNames { get; set; }
         public string[] ListName { get; set; }
@@ -24,6 +24,13 @@ namespace MaterialDesignThemeDemo.ViewModels
         {
             get { return scores; }
             set { scores = value; RaisePropertyChanged(); }
+        }
+        private string times;
+
+        public string Times
+        {
+            get { return times; }
+            set { times = value; RaisePropertyChanged(); }
         }
 
         private string names;
@@ -46,10 +53,15 @@ namespace MaterialDesignThemeDemo.ViewModels
         {
             string path = AppDomain.CurrentDomain.BaseDirectory;
             string ImgPath = path + @"1.png";
+            string ImgPath2 = path + @"2.png";
             Image image = Image.FromFile(@ImgPath);
+            Image image2 = Image.FromFile(@ImgPath2);
             Bitmap bitmap = new Bitmap(image.Width, image.Height);
+            Bitmap bitmap2 = new Bitmap(image2.Width, image2.Height);
             Graphics graphics = Graphics.FromImage(bitmap);
+            Graphics graphics2 = Graphics.FromImage(bitmap2);
             graphics.DrawImage(image, 0, 0, image.Width, image.Height);
+            graphics2.DrawImage(image2, 0, 0, image2.Width, image2.Height);
 
             ListName = Names.Split(new string[] { "\r\n" }, StringSplitOptions.None);
             ListScore = Scores.Split(new string[] { "\r\n" }, StringSplitOptions.None);
@@ -66,6 +78,31 @@ namespace MaterialDesignThemeDemo.ViewModels
             }
             string output = ImgPath.Replace(@"1.", @"1副本.");
             bitmap.Save(output);
+            //2
+            for (int i = 0; i < 3; i++)
+            {
+                Point p = new Point(200, 370 + 80 * i);//坐标
+                graphics2.DrawString(ListName[i], new Font(FontName, 30, FontStyle.Bold), new SolidBrush(Color.Black), p);
+            }
+            for (int i = 3; i < 8; i++)
+            {
+                Point p = new Point(200, 430 + 55 * i);//坐标
+                graphics2.DrawString(ListName[i], new Font(FontName, 30, FontStyle.Bold), new SolidBrush(Color.Black), p);
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                Point p = new Point(380, 370 + 80 * i);//坐标
+                graphics2.DrawString(ListScore[i], new Font(FontName, 30, FontStyle.Bold), new SolidBrush(Color.Black), p);
+            }
+            for (int i = 3; i < 8; i++)
+            {
+                Point p = new Point(380, 430 + 55 * i);//坐标
+                graphics2.DrawString(ListScore[i], new Font(FontName, 30, FontStyle.Bold), new SolidBrush(Color.Black), p);
+            }
+
+            graphics2.DrawString("第"+ Times+"节课", new Font(FontName, 30, FontStyle.Bold), new SolidBrush(Color.Black), new Point(240, 230));
+            string output2 = ImgPath2.Replace(@"2.", @"2"+ "第" + Times + "节课"+"副本.");
+            bitmap2.Save(output2);
 
         }
 
